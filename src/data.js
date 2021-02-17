@@ -6,6 +6,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 1,
+        level: 1,
     },
     {
         name: 'Parent > child-L1-a',
@@ -14,6 +15,7 @@ const tableData = [
         need: 20,
         taken: 10,
         _id: 3,
+        level: 2,
     },
     {
         name: 'Parent > child-L1-a > child-L2-a',
@@ -22,6 +24,7 @@ const tableData = [
         need: 10,
         taken: 5,
         _id: 2,
+        level: 3,
     },
     {
         name: 'Parent > child-L1-a > child-L2-a > child-L3-a',
@@ -30,6 +33,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 4,
+        level: 4,
     },
     {
         name: 'Parent > child-L1-b',
@@ -38,6 +42,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 5,
+        level: 2,
     },
     {
         name: 'Parent > child-L1-b > child-L2-a',
@@ -46,6 +51,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 6,
+        level: 3,
     },
     {
         name: 'Parent > child-L1-b > child-L2-a > child-L3-a',
@@ -54,6 +60,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 7,
+        level: 4,
     },
     {
         name: 'Parent > child-L1-b > child-L2-a > child-L3-b',
@@ -62,6 +69,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 8,
+        level: 4,
     },
     {
         name: 'Parent > child-L1-c',
@@ -70,6 +78,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 9,
+        level: 2,
     },
     {
         name: 'Parent > child-L1-c > child-L2-b',
@@ -78,6 +87,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 10,
+        level: 3,
     },
     {
         name: 'Parent > child-L1-c > child-L2-a',
@@ -86,6 +96,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 11,
+        level: 3,
     },
     {
         name: 'Parent > child-L1-c > child-L2-a > child-L3-a',
@@ -94,6 +105,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 12,
+        level: 4,
     },
     {
         name: 'Parent > child-L1-c > child-L2-a > child-L3-a > child-L4-a',
@@ -102,6 +114,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 13,
+        level: 5,
     },
     {
         name: 'Parent > child-L1-c > child-L2-a > child-L3-a > child-L4-a > child-L5-a',
@@ -110,6 +123,7 @@ const tableData = [
         need: 50,
         taken: 20,
         _id: 14,
+        level: 6,
     },
 ]
 const rD = () => {
