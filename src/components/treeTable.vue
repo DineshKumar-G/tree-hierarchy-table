@@ -43,13 +43,29 @@ export default {
     getFieldsUITemplate(fields, rowData) {
       let fieldTemplate = '';
       fields.forEach((field) => {
-        console.log(field, rowData);
         fieldTemplate += `<span class="column">${rowData[field]}</span>`;
       })
       return fieldTemplate;
     },
     spawnCaret(c) {
       const childs = _.filter(data.tableData, { parentId: c._id });
+      let isGeneralStorage = false;
+      this.fields.forEach((field) => {
+        if (!isGeneralStorage) {
+          const val = _(childs).map(field).sum();
+          if (val !== c[field]) {
+            isGeneralStorage = true;
+          }
+        }
+      });
+      let generalStorageText = '';
+      if (isGeneralStorage) {
+        generalStorageText = `<li>
+          <span class="column" style="margin-left:${(c.level+1)*(childs.length ? 20 : 25)}px">
+            ${c.name} - General Storage
+          </span>
+        </li>`
+      }
       let ellipses = '';
       for (let i = 0; i < (c.level -1); i++) {
         ellipses += '<i></i><u></u>'; 
@@ -58,7 +74,7 @@ export default {
       const lists = `<span class="${childs.length ? 'caret' : ''}">
         <span class="columns">
           <span class="column ${!_.isEmpty(this.fields) ? 'is-half' : 'is-full'} is-relative flex">
-            <span class="ellipses" style="margin-left:${c.level*(childs.length ? 20 : 25)}px">
+            <span class="ellipses" style="margin-left:${c.level*25}px">
               ${ellipses}
             </span>
             <span class="${childs.length ? 'show-arrow' : ''}">${c.name}</span>
@@ -68,7 +84,10 @@ export default {
       </span>`;
       if (childs.length === 0) return lists
       const hier = `${lists}
-				<ul class="nested"> ${this.getChildLi(c._id)}</ul>`;
+        <ul class="nested">
+          ${generalStorageText}
+          ${this.getChildLi(c._id)}
+        </ul>`;
       return hier;
 		},
   },
