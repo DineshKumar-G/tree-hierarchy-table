@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <treeTable :fields="invFields"/>
+    <treeTable/>
   </div>
 </template>
 
@@ -11,11 +11,6 @@ export default {
   name: 'App',
   components: {
     treeTable
-  },
-  data() {
-    return {
-      invFields: ['avail', 'need', 'taken'],
-    };
   }
 }
 </script>
